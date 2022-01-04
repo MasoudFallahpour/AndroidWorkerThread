@@ -3,7 +3,7 @@ package ir.fallahpoor.workerthread
 import java.util.concurrent.ConcurrentLinkedQueue
 import java.util.concurrent.atomic.AtomicBoolean
 
-class HandcraftedWorkerThread(threadName: String) : Thread(threadName) {
+class HandcraftedWorkerThread : Thread() {
 
     private val isAlive: AtomicBoolean = AtomicBoolean(true)
     private val taskQueue: ConcurrentLinkedQueue<Runnable> = ConcurrentLinkedQueue()
