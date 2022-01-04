@@ -14,14 +14,15 @@ class HandcraftedWorkerThread : Thread() {
 
     override fun run() {
         while (isAlive.get()) {
-            val task: Runnable? = taskQueue.poll()
-            task?.run()
+            if (taskQueue.isNotEmpty()) {
+                val task: Runnable = taskQueue.poll()
+                task.run()
+            }
         }
     }
 
-    fun execute(task: Runnable): HandcraftedWorkerThread {
+    fun execute(task: Runnable) {
         taskQueue.add(task)
-        return this
     }
 
     fun quit() {
