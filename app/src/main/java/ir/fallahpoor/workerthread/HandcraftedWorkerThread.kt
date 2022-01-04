@@ -5,8 +5,8 @@ import java.util.concurrent.atomic.AtomicBoolean
 
 class HandcraftedWorkerThread : Thread() {
 
-    private val isAlive: AtomicBoolean = AtomicBoolean(true)
-    private val taskQueue: ConcurrentLinkedQueue<Runnable> = ConcurrentLinkedQueue()
+    private val isAlive = AtomicBoolean(true)
+    private val taskQueue = ConcurrentLinkedQueue<Runnable>()
 
     init {
         start()
