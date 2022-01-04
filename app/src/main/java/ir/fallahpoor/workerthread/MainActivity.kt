@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        workerThread = HandcraftedWorkerThread("WorkerThread")
+        workerThread = HandcraftedWorkerThread()
         //workerThread = LooperWorkerThread("WorkerThread")
         //workerThread = HandlerWorkerThread("WorkerThread")
 
