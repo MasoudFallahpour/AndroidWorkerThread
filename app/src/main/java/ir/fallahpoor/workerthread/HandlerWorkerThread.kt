@@ -15,9 +15,8 @@ class HandlerWorkerThread(threadName: String) : HandlerThread(threadName) {
         handler = Handler()
     }
 
-    fun execute(task: Runnable): HandlerWorkerThread {
+    fun execute(task: Runnable) {
         handler.post(task)
-        return this
     }
 
 }
