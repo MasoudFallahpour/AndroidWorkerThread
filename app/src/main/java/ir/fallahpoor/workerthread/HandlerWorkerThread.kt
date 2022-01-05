@@ -16,7 +16,9 @@ class HandlerWorkerThread(threadName: String) : HandlerThread(threadName) {
     }
 
     fun execute(task: Runnable) {
-        handler.post(task)
+        if (::handler.isInitialized) {
+            handler.post(task)
+        }
     }
 
 }
