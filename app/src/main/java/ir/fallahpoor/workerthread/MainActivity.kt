@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         workerThread = HandcraftedWorkerThread()
-        //workerThread = LooperWorkerThread("WorkerThread")
+        //workerThread = LooperWorkerThread()
         //workerThread = HandlerWorkerThread("WorkerThread")
 
         runTaskButton.setOnClickListener {
