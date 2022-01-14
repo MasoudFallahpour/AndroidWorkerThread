@@ -28,11 +28,11 @@ class MainActivity : AppCompatActivity() {
 
         runTaskButton.setOnClickListener {
             messageTextView.text = "Please wait ..."
-            workerThread.execute(Runnable {
+            workerThread.execute {
                 Thread.sleep(3000)
                 handler.sendMessage(createMessage("Task $counter completed"))
                 counter++
-            })
+            }
         }
 
     }

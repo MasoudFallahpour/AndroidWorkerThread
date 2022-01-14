@@ -21,8 +21,8 @@ class HandcraftedWorkerThread : Thread() {
         }
     }
 
-    fun execute(task: Runnable) {
-        taskQueue.add(task)
+    fun execute(block: () -> Unit) {
+        taskQueue.add(Runnable { block() })
     }
 
     fun quit() {

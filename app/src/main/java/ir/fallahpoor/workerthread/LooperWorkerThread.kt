@@ -28,8 +28,8 @@ class LooperWorkerThread : Thread() {
 
     }
 
-    fun execute(task: Runnable) {
-        handler.post(task)
+    fun execute(block: () -> Unit) {
+        handler.post { block() }
     }
 
     fun quit() {
